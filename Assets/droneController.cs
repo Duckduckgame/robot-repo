@@ -8,6 +8,7 @@ public class droneController : MonoBehaviour
     DroneHandler droneHandler;
     NavMeshAgent navMeshAgent;
 
+    public GameObject daddy;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +19,8 @@ public class droneController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        navMeshAgent.destination = droneHandler.droneDestination;
+        Vector3 targetPos = daddy.transform.position + daddy.transform.forward * 5;
+        //targetPos += new Vector3(Random.Range(1f, 10f), 0, Random.Range(1f, 10f));
+        navMeshAgent.destination = targetPos;
     }
 }

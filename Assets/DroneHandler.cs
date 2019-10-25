@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class DroneHandler : MonoBehaviour
 {
@@ -8,7 +9,9 @@ public class DroneHandler : MonoBehaviour
     [SerializeField]
     Camera viewingCamera;
     [SerializeField]
-    GameObject daddyDrone;
+    GameObject droneGO;
+    [SerializeField]
+    GameObject daddy;
     [SerializeField]
     int droneAmount;
 
@@ -18,20 +21,20 @@ public class DroneHandler : MonoBehaviour
     {
         for (int i = 0; i < droneAmount; i++)
         {
-            Instantiate(daddyDrone, daddyDrone.transform.position, Quaternion.identity);
-            
-        } 
+            GameObject GO = Instantiate(droneGO, droneGO.transform.position, Quaternion.identity);
+            GO.GetComponent<droneController>().daddy = daddy;
+        }
+        droneGO.GetComponent<droneController>().daddy = daddy;
     }
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        /*if (Input.GetMouseButton(0))
         {
             Debug.Log("click");
             RaycastHit hit;
@@ -39,10 +42,10 @@ public class DroneHandler : MonoBehaviour
             if(Physics.Raycast(ray, out hit, Mathf.Infinity)){
                 if(hit.collider.GetComponent<TerrainCollider>() != null)
                 {
-                    droneDestination = hit.point;
+                    daddyAgent.destination = hit.point;
                 }
             }
-        }
+        }*/
     }
 
     private void OnDrawGizmos()
