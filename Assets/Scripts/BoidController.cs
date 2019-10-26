@@ -107,6 +107,7 @@ public class BoidController : MonoBehaviour
     public void KillBoidByInstance(GameObject boid)
     {
         boidList.Remove(boid);
+        Debug.Log("drone count: " + boidList.Count);
         Destroy(boid);
     }
 
@@ -115,6 +116,7 @@ public class BoidController : MonoBehaviour
     {
         var boid = boidList[listPosition];
         boidList.RemoveAt(listPosition);
+        Debug.Log("drone count: " + boidList.Count);
         Destroy(boid);
     }
 }

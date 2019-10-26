@@ -65,6 +65,7 @@ MonoBehaviour:
   bullet: {fileID: 2690577647986418525, guid: 65e2b553907584b4baec27e455030549, type: 3}
   laser: {fileID: 379731771587039806, guid: 223d98978b4a13742aac29670cb1d826, type: 3}
   fireTimer: 0.5
+  laserTimer: 0.1
 --- !u!1 &6482359563030091239
 GameObject:
   m_ObjectHideFlags: 0
@@ -123,7 +124,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4f2c5be00c26738478da31cc08ca235b, type: 2}
+  - {fileID: 2100000, guid: cdab0837f66c7dd4f9868fef533d3c14, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -235,7 +236,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 4f2c5be00c26738478da31cc08ca235b, type: 2}
+      objectReference: {fileID: 2100000, guid: 3bce6d986d5351a48b1f0dba9db89a7e, type: 2}
     - target: {fileID: 2636797423722545353, guid: 2c7454dd32465ab4399a67353618eb7b,
         type: 3}
       propertyPath: m_LocalScale.x

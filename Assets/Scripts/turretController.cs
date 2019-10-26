@@ -25,6 +25,9 @@ public class turretController : MonoBehaviour
     [SerializeField]
     float fireTimer;
     float timeSinceFired = Mathf.Infinity;
+    [SerializeField]
+    float laserTimer;
+    float timeSinceLasered = Mathf.Infinity;
     BoidController boidController;
 
     GameObject player;
@@ -51,6 +54,7 @@ public class turretController : MonoBehaviour
     {
         Quaternion oldRot = transform.rotation;
         timeSinceFired += Time.deltaTime;
+        timeSinceLasered += Time.deltaTime;
         if(Vector3.Distance(transform.position, player.transform.position) < detectionRange)
         {
             agro = true;
@@ -85,6 +89,12 @@ public class turretController : MonoBehaviour
     {
         laserLineRenderer.SetPosition(0, fireLocation.position);
         laserLineRenderer.SetPosition(1, player.transform.position);
+
+        if(timeSinceLasered > laserTimer)
+        {
+            timeSinceLasered = 0;
+            boidController.KillBoidByNumber(Random.Range(0, boidController.boidList.Count - 1));
+        }
     }
 
     void StopLaser()

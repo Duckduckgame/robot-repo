@@ -99,4 +99,6 @@ public class BoidBehaviour : MonoBehaviour
         // Moves forawrd.
         transform.position = currentPosition + transform.forward * (velocity * Time.deltaTime);
     }
+
+    
 }
