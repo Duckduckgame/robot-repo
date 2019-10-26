@@ -32,7 +32,7 @@ public class BoidController : MonoBehaviour
 
     public float spawnRadius = 4.0f;
 
-    [Range(0.1f, 20.0f)]
+    [Range(0.1f, 500.0f)]
     public float velocity = 6.0f;
 
     [Range(0.0f, 0.9f)]
