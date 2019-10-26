@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+using UnityEditor;
+
 public class CameraController : MonoBehaviour
 {
     [SerializeField]
@@ -11,13 +13,19 @@ public class CameraController : MonoBehaviour
     [SerializeField]
     float scrollspeed = 25f;
     [SerializeField]
-    float WASDspeed = 25f;
+    float WASDspeed = 100f;
     [SerializeField]
     float yMin = 3f;
     [SerializeField]
     float yMax = 200f;
 
     Rigidbody rigidBody;
+
+    Vector3 posVelocity;
+    Vector3 zoomVelocity; //global variable here to keep zooming smooth
+
+    [Range(.5f, .99f)]
+    public float zoomSmoothing = .8f;
 
     // Start is called before the first frame update
     void Start()
@@ -31,36 +39,48 @@ public class CameraController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 camForce = new Vector3(0f, 0f, 0f);
+        ZoomUpdate();
+        PositionUpdate();
 
-        camForce += ZoomUpdate();
-        camForce += PositionUpdate();
-
-        rigidBody.velocity = camForce;
-        
-
-
+        rigidBody.velocity = (zoomVelocity + posVelocity);
 
     }
 
-    private Vector3 ZoomUpdate()
+    private void ZoomUpdate()
     {
-        //skip the function if we're on the edge of bounds:
-        if (rigidBody.position.y <= yMin || rigidBody.position.y >= yMax) return new Vector3(0f, 0f, 0f);
+        Vector3 deltaZoomVelocity = transform.forward.normalized * scrollspeed;
 
+        //gently nudge back in if we're on the edge of y bounds:
+        if (rigidBody.position.y < yMin)
+        {
+            zoomVelocity -= deltaZoomVelocity;
+            return;
+        }
+        if (rigidBody.position.y > yMax)
+        {
+            zoomVelocity += deltaZoomVelocity;
+            return;
+        }
 
-        float scrollAmt = Input.mouseScrollDelta.y * scrollspeed;
-        Vector3 heading = transform.forward.normalized * scrollAmt;
+        //getting input:
+        float scrollY = Input.mouseScrollDelta.y;
 
-        return heading;
-        
+        if (scrollY > 0)
+            zoomVelocity += deltaZoomVelocity;
+        if (scrollY < 0)
+            zoomVelocity -= deltaZoomVelocity;
+
+        //if we've come this far, we aren't changing zoom amount, so let's smooth the zoomVelocity
+
+        zoomVelocity *= zoomSmoothing;
+
     }
 
-    private Vector3 PositionUpdate()
+    private void PositionUpdate()
     {
-        
+
         Vector3 heading = new Vector3(0, 0, 0);
-        
+
         //Z:
         if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.S))
         {
@@ -78,7 +98,7 @@ public class CameraController : MonoBehaviour
         //X:
         if (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.D))
         {
-            heading.x = Time.deltaTime * WASDspeed;
+            //do nothing
         }
         else if (Input.GetKey(KeyCode.A))
         {
@@ -89,9 +109,8 @@ public class CameraController : MonoBehaviour
             heading.x = Time.deltaTime * WASDspeed;
         }
 
-        return heading;
-        
-
+        posVelocity = heading;
     }
 }
+
 

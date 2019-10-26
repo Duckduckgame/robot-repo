@@ -312,10 +312,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPosition: {x: 0, y: 20, z: -10}
   startAngle: {x: 60, y: 0, z: 0}
-  scrollspeed: 5
-  WASDspeed: 10
+  scrollspeed: 25
+  WASDspeed: 100
   yMin: 3
   yMax: 200
+  zoomSmoothing: 0.843
 --- !u!54 &1539070279
 Rigidbody:
   m_ObjectHideFlags: 0
