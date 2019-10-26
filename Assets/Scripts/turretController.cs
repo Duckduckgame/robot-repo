@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class turretController : MonoBehaviour
 {
-
+    enum fireMode {bullet, laser };
+    [SerializeField]
+    fireMode crntMode;
     [SerializeField]
     float detectionRange;
     [SerializeField]
@@ -15,6 +17,9 @@ public class turretController : MonoBehaviour
     Transform fireLocation;
     [SerializeField]
     GameObject bullet;
+    [SerializeField]
+    GameObject laser;
+    LineRenderer laserLineRenderer;
     [SerializeField]
     float fireTimer;
     float timeSinceFired = Mathf.Infinity;
@@ -29,6 +34,12 @@ public class turretController : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        if (crntMode == fireMode.laser) {
+            GameObject go = Instantiate(laser, Vector3.zero, Quaternion.identity, transform);
+            go.GetComponent<LineRenderer>().enabled = true;
+            laserLineRenderer = go.GetComponent<LineRenderer>();
+        }
+          
     }
 
     // Update is called once per frame
@@ -40,18 +51,37 @@ public class turretController : MonoBehaviour
         {
             agro = true;
             turret.transform.LookAt(player.transform.position);
-            if(timeSinceFired > fireTimer)
-            {
-                timeSinceFired = 0;
-                Instantiate(bullet, fireLocation.position, turret.transform.rotation);
-            }
+            if(crntMode == fireMode.bullet) FireBullet();
+            if(crntMode == fireMode.laser) FireLaser();
         }
         else
         {
             agro = false;
+            if (crntMode == fireMode.laser) StopLaser();
         }
         transform.rotation = Quaternion.Lerp(oldRot, transform.rotation, Time.deltaTime * rotSpeed);
 
+    }
+
+    private void FireBullet()
+    {
+        if (timeSinceFired > fireTimer)
+        {
+            timeSinceFired = 0;
+            Instantiate(bullet, fireLocation.position, turret.transform.rotation);
+        }
+    }
+
+    void FireLaser()
+    {
+        laserLineRenderer.SetPosition(0, fireLocation.position);
+        laserLineRenderer.SetPosition(1, player.transform.position);
+    }
+
+    void StopLaser()
+    {
+        laserLineRenderer.SetPosition(0, Vector3.zero);
+        laserLineRenderer.SetPosition(1, Vector3.zero);
     }
 
     private void OnDrawGizmos()
