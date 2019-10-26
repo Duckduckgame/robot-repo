@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class MMUIManager : MonoBehaviour
 {
@@ -12,7 +13,7 @@ public class MMUIManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -23,6 +24,6 @@ public class MMUIManager : MonoBehaviour
 
     public void StartPressed()
     {
-        Debug.Log("ITS FUCKING PRESSED");
+        SceneManager.LoadSceneAsync(1);
     }
 }

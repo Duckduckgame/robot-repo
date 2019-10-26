@@ -59,7 +59,7 @@ MonoBehaviour:
   crntMode: 0
   life: 500
   detectionRange: 150
-  rotSpeed: 0
+  rotSpeed: 1
   turret: {fileID: 6482359563030091239}
   fireLocation: {fileID: 7420524957067642899}
   bullet: {fileID: 2690577647986418525, guid: 65e2b553907584b4baec27e455030549, type: 3}

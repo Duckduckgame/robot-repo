@@ -33,6 +33,7 @@ public class turretController : MonoBehaviour
     GameObject player;
 
     Quaternion targetRot;
+    Quaternion oldRot;
 
     bool agro = false;
 
@@ -52,7 +53,7 @@ public class turretController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Quaternion oldRot = transform.rotation;
+       
         timeSinceFired += Time.deltaTime;
         timeSinceLasered += Time.deltaTime;
         if(Vector3.Distance(transform.position, player.transform.position) < detectionRange)
@@ -67,13 +68,13 @@ public class turretController : MonoBehaviour
             agro = false;
             if (crntMode == fireMode.laser) StopLaser();
         }
-        transform.rotation = Quaternion.Lerp(oldRot, transform.rotation, Time.deltaTime * rotSpeed);
+
+        //turret.transform.rotation = Quaternion.Lerp(oldRot, crntRot, Time.deltaTime * rotSpeed);
 
         if(life <= 0)
         {
             Die();
         }
-
     }
 
     private void FireBullet()
