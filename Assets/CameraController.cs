@@ -81,36 +81,36 @@ public class CameraController : MonoBehaviour
 
         Vector3 heading = new Vector3(0, 0, 0);
 
+        heading.z = Time.deltaTime * WASDspeed * Input.GetAxis("Vertical");
+        heading.x = Time.deltaTime * WASDspeed * Input.GetAxis("Horizontal");
+        /*
         //Z:
         if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.S))
         {
             //do nothing
         }
-        else if (Input.GetKey(KeyCode.W))
+        else if (Input.GetAxis("Vertical") != 0)
         {
-            heading.z = Time.deltaTime * WASDspeed;
-        }
-        else if (Input.GetKey(KeyCode.S))
-        {
-            heading.z = -Time.deltaTime * WASDspeed;
-        }
+            heading.z = Time.deltaTime * WASDspeed * Input.GetAxis("Vertical");
 
-        //X:
-        if (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.D))
-        {
-            //do nothing
-        }
-        else if (Input.GetKey(KeyCode.A))
-        {
-            heading.x = -Time.deltaTime * WASDspeed;
-        }
-        else if (Input.GetKey(KeyCode.D))
-        {
-            heading.x = Time.deltaTime * WASDspeed;
-        }
 
-        posVelocity = heading;
+            //X:
+            if (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.D))
+            {
+                //do nothing
+            }
+            else if (Input.GetKey(KeyCode.A))
+            {
+                heading.x = -Time.deltaTime * WASDspeed;
+            }
+            else if (Input.GetKey(KeyCode.D))
+            {
+                heading.x = Time.deltaTime * WASDspeed;
+            }
+            */
+            posVelocity = heading;
+        }
     }
-}
+
 
 
