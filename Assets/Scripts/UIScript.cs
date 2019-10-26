@@ -7,28 +7,36 @@ using TMPro;
 
 public class UIScript : MonoBehaviour
 {
-
-    GameObject screenCanvas;
-    GameObject dronesNumCanvas;
-
+    
     BoidController boidController;
+
+    [SerializeField]
+    TextMeshProUGUI boidsNumTxt;
 
     // Start is called before the first frame update
     void Start()
     {
-        boidController = FindObjectOfType<BoidController>().GetComponent<BoidController>();
+        if (boidsNumTxt == null)
+        {
+            boidsNumTxt = FindObjectOfType<TextMeshProUGUI>(); // FindObjectOfType<TextMeshPro>().GetComponent<TextMeshPro>();
+        }
 
-        screenCanvas = GameObject.Find("ScreenCanvas");
-        dronesNumCanvas = GameObject.Find("DronesNum");
+
+        boidController = FindObjectOfType<BoidController>().GetComponent<BoidController>();
+                
     }
 
     // Update is called once per frame
     void Update()
     {
+        int boidsNum;
+#if false
+        boidsNum = boidController.boidList.Count;
+#endif
+#if true
+        boidsNum = 69;
+#endif
 
-        int boidsNum = boidController.boidList.Count;
-
-        Text text = dronesNumCanvas.GetComponent<Text>();
-        text.text = "ROBO REVO BOYOS NUM: ";// + boidsNum;
+        boidsNumTxt.SetText("ROBO REVO BOYOS NUM: " + boidsNum);
     }
 }
