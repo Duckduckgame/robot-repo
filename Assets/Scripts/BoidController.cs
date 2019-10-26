@@ -78,6 +78,18 @@ public class BoidController : MonoBehaviour
         boidList.Add(boid);
     }
 
+    public void RunTimeSpawn(Vector3 position, int amount)
+    {
+        for (int i = 0; i < amount; i++)
+        {
+            var rotation = Quaternion.Slerp(transform.rotation, Random.rotation, 0.3f);
+            var boid = Instantiate(boidPrefab, position, rotation) as GameObject;
+            if (boid.GetComponent<BoidBehaviour>())
+                boid.GetComponent<BoidBehaviour>().controller = this;
+            boidList.Add(boid);
+        }
+    }
+
     // Just that, kill em all
     public void KillAllBoids()
     {

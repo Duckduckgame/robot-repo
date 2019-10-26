@@ -8,6 +8,8 @@ public class turretController : MonoBehaviour
     [SerializeField]
     fireMode crntMode;
     [SerializeField]
+    int life;
+    [SerializeField]
     float detectionRange;
     [SerializeField]
     float rotSpeed;
@@ -23,6 +25,7 @@ public class turretController : MonoBehaviour
     [SerializeField]
     float fireTimer;
     float timeSinceFired = Mathf.Infinity;
+    BoidController boidController;
 
     GameObject player;
 
@@ -33,6 +36,7 @@ public class turretController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        boidController = FindObjectOfType<BoidController>();
         player = GameObject.FindGameObjectWithTag("Player");
         if (crntMode == fireMode.laser) {
             GameObject go = Instantiate(laser, Vector3.zero, Quaternion.identity, transform);
@@ -61,6 +65,11 @@ public class turretController : MonoBehaviour
         }
         transform.rotation = Quaternion.Lerp(oldRot, transform.rotation, Time.deltaTime * rotSpeed);
 
+        if(life <= 0)
+        {
+            Die();
+        }
+
     }
 
     private void FireBullet()
@@ -82,6 +91,21 @@ public class turretController : MonoBehaviour
     {
         laserLineRenderer.SetPosition(0, Vector3.zero);
         laserLineRenderer.SetPosition(1, Vector3.zero);
+    }
+
+    public void Die()
+    {
+        boidController.RunTimeSpawn(player.transform.position, 30);
+        Destroy(gameObject);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.GetComponent<BoidBehaviour>() != null)
+        {
+            life--;
+        }
+            
     }
 
     private void OnDrawGizmos()

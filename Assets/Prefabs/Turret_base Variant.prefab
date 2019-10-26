@@ -30,6 +30,20 @@ Transform:
   m_Father: {fileID: 7880240665815345085}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &6953368129167479668
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7606861328751570945}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 32.4
+  m_Height: 177.16
+  m_Direction: 1
+  m_Center: {x: 0, y: 52.76, z: 0}
 --- !u!114 &1085856966
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43,6 +57,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   crntMode: 0
+  life: 500
   detectionRange: 150
   rotSpeed: 0
   turret: {fileID: 6482359563030091239}

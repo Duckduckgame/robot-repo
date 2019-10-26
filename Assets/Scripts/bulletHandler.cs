@@ -9,6 +9,13 @@ public class bulletHandler : MonoBehaviour
     [SerializeField]
     float endSize;
 
+    BoidController boidController;
+
+    private void Start()
+    {
+        boidController = FindObjectOfType<BoidController>();
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -19,7 +26,10 @@ public class bulletHandler : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log(collision.transform.name);
-        Destroy(gameObject,1f);
+        if(collision.gameObject.GetComponent<BoidBehaviour>() != null)
+        {
+            boidController.KillBoidByInstance(collision.gameObject);
+        }
+        Destroy(gameObject,0.01f);
     }
 }
