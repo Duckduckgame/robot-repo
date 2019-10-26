@@ -311,7 +311,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startPosition: {x: 0, y: 20, z: -10}
-  startAngle: {x: 60, y: 0, z: 0}
+  startAngle: {x: 60, y: 180, z: 0}
   scrollspeed: 25
   WASDspeed: 100
   yMin: 3

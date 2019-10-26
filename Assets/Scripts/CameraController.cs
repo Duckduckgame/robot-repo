@@ -7,10 +7,6 @@ using UnityEditor;
 public class CameraController : MonoBehaviour
 {
     [SerializeField]
-    Vector3 startPosition = new Vector3(0, 20, -10);
-    [SerializeField]
-    Vector3 startAngle = new Vector3(60, 0, 0);
-    [SerializeField]
     float scrollspeed = 25f;
     [SerializeField]
     float WASDspeed = 100f;
@@ -29,10 +25,7 @@ public class CameraController : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
-    {
-        transform.position = startPosition;
-        transform.rotation = Quaternion.Euler(startAngle);
-
+    {        
         rigidBody = GetComponent<Rigidbody>();
     }
 
@@ -81,8 +74,22 @@ public class CameraController : MonoBehaviour
 
         Vector3 heading = new Vector3(0, 0, 0);
 
-        heading.z = Time.deltaTime * WASDspeed * Input.GetAxis("Vertical");
-        heading.x = Time.deltaTime * WASDspeed * Input.GetAxis("Horizontal");
+        //get local direciton:
+        float forward = Input.GetAxis("Vertical");
+        float lateral = Input.GetAxis("Horizontal");
+
+        //change to rotated direciton:
+        heading += transform.forward * forward;
+        heading += transform.right * lateral;
+
+        //remove the y-component, keeping the cam on the same horizontal plane:
+        heading.y = 0;
+
+        heading.Normalize();
+
+        heading *= Time.deltaTime * WASDspeed;
+
+
         /*
         //Z:
         if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.S))
