@@ -19,6 +19,7 @@ public class bulletHandler : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        Debug.Log(collision.transform.name);
         Destroy(gameObject,1f);
     }
 }
