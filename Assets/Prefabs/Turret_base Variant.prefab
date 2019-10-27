@@ -71,7 +71,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   crntMode: 0
   life: 500
-  detectionRange: 150
+  detectionRange: 450
   rotSpeed: 1
   turret: {fileID: 6482359563030091239}
   fireLocation: {fileID: 7420524957067642899}
@@ -169,6 +169,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Turret_base Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 2c7454dd32465ab4399a67353618eb7b,
+        type: 3}
+      propertyPath: m_TagString
+      value: turret
       objectReference: {fileID: 0}
     - target: {fileID: -8052994932809076077, guid: 2c7454dd32465ab4399a67353618eb7b,
         type: 3}

@@ -30,4 +30,4 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats: []
     m_Colors:
-    - Color_CD33B36C: {r: 0, g: 1.3396778, b: 1.414214, a: 0}
+    - Color_CD33B36C: {r: 1.5674682, g: 0.016112406, b: 0, a: 0}

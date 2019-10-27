@@ -35,6 +35,8 @@ public class turretController : MonoBehaviour
     Quaternion targetRot;
     Quaternion oldRot;
 
+    [HideInInspector]
+    public bool dead = false;
     bool agro = false;
 
     // Start is called before the first frame update
@@ -48,6 +50,8 @@ public class turretController : MonoBehaviour
             laserLineRenderer = go.GetComponent<LineRenderer>();
         }
         GetComponent<SphereCollider>().radius = detectionRange / 2;
+
+
     }
 
     // Update is called once per frame
@@ -73,7 +77,8 @@ public class turretController : MonoBehaviour
 
         if(life <= 0)
         {
-            Die();
+            //Die();
+            dead = true;
         }
     }
 
