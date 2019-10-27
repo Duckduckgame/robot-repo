@@ -43,6 +43,10 @@ public class turretController : MonoBehaviour
 
     SoundManager soundManager;
 
+
+    // explosion effect
+    public GameObject explosionParticles;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -119,6 +123,7 @@ public class turretController : MonoBehaviour
     {
         soundManager.PlayByID(2);
         boidController.RunTimeSpawn(player.transform.position, 30);
+        Instantiate(explosionParticles, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
 

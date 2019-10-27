@@ -212,6 +212,12 @@ PrefabInstance:
       propertyPath: neighborDist
       value: 5.22
       objectReference: {fileID: 0}
+    - target: {fileID: 114680727272663940, guid: f20895eed6814d54286b056ca6164075,
+        type: 3}
+      propertyPath: droneDeathParticle
+      value: 
+      objectReference: {fileID: 5111902631791890429, guid: 89a7ba5566900bf42881512a8ca3ac40,
+        type: 3}
     - target: {fileID: 114027151484231192, guid: f20895eed6814d54286b056ca6164075,
         type: 3}
       propertyPath: position.frequency
