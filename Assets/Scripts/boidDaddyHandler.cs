@@ -20,8 +20,7 @@ public class boidDaddyHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        boidNum = boidController.boidList.Count;
-        audioSource.pitch = (boidNum / 250);
+
     }
 
     private void OnTriggerStay(Collider other)

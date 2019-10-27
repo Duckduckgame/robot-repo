@@ -117,6 +117,7 @@ public class turretController : MonoBehaviour
 
     public void Die()
     {
+        soundManager.PlayByID(2);
         boidController.RunTimeSpawn(player.transform.position, 30);
         Destroy(gameObject);
     }
