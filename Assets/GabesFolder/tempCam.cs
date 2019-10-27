@@ -33,9 +33,11 @@ public class tempCam : MonoBehaviour
                 ray = mainCam.ViewportPointToRay(new Vector3(hit.textureCoord.x, hit.textureCoord.y, 0));
                 if(Physics.Raycast(ray, out hit))
                 {
-                    hitPoint = hit.point;
-                    //daddy.GetComponent<NavMeshAgent>().destination = hitPoint;
-                    daddy.transform.position = hitPoint + new Vector3(0,10,0);
+                    if (hit.collider.gameObject.GetComponent<TerrainCollider>())
+                    {
+                        hitPoint = hit.point;
+                        daddy.transform.position = hitPoint + new Vector3(0, 10, 0);
+                    }
                 }
             }
         }

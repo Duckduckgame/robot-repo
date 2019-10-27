@@ -29,7 +29,7 @@ public class turretController : MonoBehaviour
     float laserTimer;
     float timeSinceLasered = Mathf.Infinity;
     BoidController boidController;
-
+    int boidCount = 0;
     GameObject player;
 
     Quaternion targetRot;
@@ -47,7 +47,7 @@ public class turretController : MonoBehaviour
             go.GetComponent<LineRenderer>().enabled = true;
             laserLineRenderer = go.GetComponent<LineRenderer>();
         }
-          
+        GetComponent<SphereCollider>().radius = detectionRange * 2;
     }
 
     // Update is called once per frame
@@ -56,7 +56,7 @@ public class turretController : MonoBehaviour
        
         timeSinceFired += Time.deltaTime;
         timeSinceLasered += Time.deltaTime;
-        if(Vector3.Distance(transform.position, player.transform.position) < detectionRange)
+        if(Vector3.Distance(transform.position, player.transform.position) < detectionRange && boidCount > 3)
         {
             agro = true;
             turret.transform.LookAt(player.transform.position);
@@ -117,6 +117,14 @@ public class turretController : MonoBehaviour
             life--;
         }
             
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if(other.tag == "Boid")
+        {
+            boidCount++;
+        }
     }
 
     private void OnDrawGizmos()
