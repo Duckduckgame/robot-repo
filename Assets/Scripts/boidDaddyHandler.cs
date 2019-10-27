@@ -23,7 +23,7 @@ public class boidDaddyHandler : MonoBehaviour
         
         if(other.GetComponent<bulletHandler>() != null)
         {
-            Debug.Log("boid ball hit");
+
             boidController.KillBoidByNumber(Random.Range(0, boidController.boidList.Count - 1));
         }
     }
