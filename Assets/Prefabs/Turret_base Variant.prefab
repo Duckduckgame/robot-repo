@@ -71,7 +71,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   crntMode: 0
   life: 500
-  detectionRange: 150
+  detectionRange: 450
   rotSpeed: 1
   turret: {fileID: 6482359563030091239}
   fireLocation: {fileID: 7420524957067642899}
