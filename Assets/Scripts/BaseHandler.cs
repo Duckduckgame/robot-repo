@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(SoundManager))]
 public class BaseHandler : MonoBehaviour
 {
     [SerializeField]
@@ -9,11 +10,24 @@ public class BaseHandler : MonoBehaviour
 
     [SerializeField]
     GameObject Shield;
+
+    [SerializeField]
+    AudioClip shieldDownclip;
+
+    SoundManager soundManager;
+
+    bool shieldDown = false;
     // Start is called before the first frame update
     void Start()
     {
-        
-        
+        soundManager = GetComponent<SoundManager>();
+
+        foreach (GameObject GO in turrets)
+        {
+            GO.GetComponent<turretController>().belongsToBase = true;
+        }
+
+
     }
 
     // Update is called once per frame
@@ -30,10 +44,11 @@ public class BaseHandler : MonoBehaviour
             }
         }   
 
-        if(turrets.Count <= 0)
+        if(turrets.Count <= 0 && !shieldDown)
         {
-            Debug.Log("shield down");
+            soundManager.PlayByClip(shieldDownclip);
             Destroy(Shield);
+            shieldDown = true;
         }
     }
 

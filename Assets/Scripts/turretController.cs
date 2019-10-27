@@ -38,6 +38,10 @@ public class turretController : MonoBehaviour
     [HideInInspector]
     public bool dead = false;
     bool agro = false;
+    [HideInInspector]
+    public bool belongsToBase = false;
+
+    SoundManager soundManager;
 
     // Start is called before the first frame update
     void Start()
@@ -51,7 +55,7 @@ public class turretController : MonoBehaviour
         }
         GetComponent<SphereCollider>().radius = detectionRange / 2;
 
-
+        soundManager = GetComponent<SoundManager>();
     }
 
     // Update is called once per frame
@@ -77,8 +81,8 @@ public class turretController : MonoBehaviour
 
         if(life <= 0)
         {
-            //Die();
             dead = true;
+            if (!belongsToBase) Die();
         }
     }
 
@@ -88,6 +92,7 @@ public class turretController : MonoBehaviour
         {
             timeSinceFired = 0;
             Instantiate(bullet, fireLocation.position, turret.transform.rotation);
+            soundManager.PlayByID(0);
         }
     }
 
@@ -100,6 +105,7 @@ public class turretController : MonoBehaviour
         {
             timeSinceLasered = 0;
             boidController.KillBoidByNumber(Random.Range(0, boidController.boidList.Count - 1));
+            soundManager.PlayByID(1);
         }
     }
 
