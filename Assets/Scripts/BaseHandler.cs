@@ -65,6 +65,7 @@ public class BaseHandler : MonoBehaviour
     }
     public void Die()
     {
+        FindObjectOfType<WinLose>().buildingCount--;
         soundManager.PlayByClip(explosionClip);
         boidController.RunTimeSpawn(player.transform.position, 30);
         Destroy(gameObject, 2f);

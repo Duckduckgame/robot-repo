@@ -16,11 +16,15 @@ public class UIPauseHandler : MonoBehaviour
     CanvasGroup playCanvas;
     [SerializeField]
     TextMeshProUGUI boidCounter;
+    [SerializeField]
+    CanvasGroup winCanvas;
 
     Dictionary<UIMode, CanvasGroup> modeToCanvas;
 
     [SerializeField]
     BoidController boidController;
+
+    public bool win;
 
     // Start is called before the first frame update
     void Start()
@@ -35,6 +39,7 @@ public class UIPauseHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (win) winCanvas.alpha = 1;
         if (Input.GetKeyDown(KeyCode.Escape) && crntMode == UIMode.play)
         {
             crntMode = UIMode.pause;

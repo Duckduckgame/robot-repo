@@ -8,6 +8,9 @@ public class WinLose : MonoBehaviour
 {
     BoidController boidController;
 
+    [HideInInspector]
+    public int buildingCount = 5;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +23,11 @@ public class WinLose : MonoBehaviour
         if(boidController.boidList.Count <= 0)
         {
             SceneManager.LoadSceneAsync(0);
+        }
+
+        if (buildingCount <= 0)
+        {
+            FindObjectOfType<UIPauseHandler>().win = true;
         }
 
     }

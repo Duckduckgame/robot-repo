@@ -13,6 +13,8 @@ public class UIScript : MonoBehaviour
     [SerializeField]
     TextMeshProUGUI boidsNumTxt;
 
+    public bool win;
+
     // Start is called before the first frame update
     void Start()
     {
