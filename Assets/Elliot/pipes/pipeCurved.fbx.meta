@@ -3,7 +3,17 @@ guid: c03d49ff0c7ef1d468eef96757cf684e
 ModelImporter:
   serializedVersion: 26
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: initialShadingGroup
+    second: {fileID: 2100000, guid: a41d8a53c588ce042a43268a0d715520, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: laser
+    second: {fileID: 2100000, guid: f734d6bff18794a499e9cfea9f09ff87, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

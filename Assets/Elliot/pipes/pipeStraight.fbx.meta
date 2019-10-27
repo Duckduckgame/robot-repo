@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: aab94d877625be64582dde7b663e2176
+guid: a62e00d1fc348b642b3e21c0325ceeff
 ModelImporter:
   serializedVersion: 26
   internalIDToNameTable: []
@@ -7,8 +7,13 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: pCylinder1Mat
+      name: initialShadingGroup.001
     second: {fileID: 2100000, guid: a41d8a53c588ce042a43268a0d715520, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: laser
+    second: {fileID: 2100000, guid: f734d6bff18794a499e9cfea9f09ff87, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
