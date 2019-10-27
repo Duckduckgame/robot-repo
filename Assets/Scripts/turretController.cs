@@ -123,8 +123,13 @@ public class turretController : MonoBehaviour
     {
         soundManager.PlayByID(2);
         boidController.RunTimeSpawn(player.transform.position, 30);
+
         Instantiate(explosionParticles, transform.position, Quaternion.identity);
         Destroy(gameObject);
+
+        Destroy(gameObject, 0.5f);
+        Destroy(this);
+
     }
 
     private void OnCollisionEnter(Collision collision)

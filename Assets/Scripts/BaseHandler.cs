@@ -7,14 +7,20 @@ public class BaseHandler : MonoBehaviour
 {
     [SerializeField]
     List<GameObject> turrets;
-
+    [SerializeField]
+    float life = 100;
     [SerializeField]
     GameObject Shield;
 
     [SerializeField]
     AudioClip shieldDownclip;
+    [SerializeField]
+    AudioClip explosionClip;
 
     SoundManager soundManager;
+    BoidController boidController;
+
+    GameObject player;
 
     bool shieldDown = false;
     // Start is called before the first frame update
@@ -26,7 +32,8 @@ public class BaseHandler : MonoBehaviour
         {
             GO.GetComponent<turretController>().belongsToBase = true;
         }
-
+        player = GameObject.FindGameObjectWithTag("Player");
+        boidController = FindObjectOfType<BoidController>();
 
     }
 
@@ -50,6 +57,28 @@ public class BaseHandler : MonoBehaviour
             Destroy(Shield);
             shieldDown = true;
         }
+
+        if(life <= 0 && shieldDown)
+        {
+            Die();
+        }
+    }
+    public void Die()
+    {
+        soundManager.PlayByClip(explosionClip);
+        boidController.RunTimeSpawn(player.transform.position, 30);
+        Destroy(gameObject, 2f);
+        Destroy(this);
+    }
+
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.GetComponent<BoidBehaviour>() != null)
+        {
+            life--;
+        }
+
     }
 
     private void OnDrawGizmos()
