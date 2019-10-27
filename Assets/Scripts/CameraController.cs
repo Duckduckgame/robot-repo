@@ -64,7 +64,6 @@ public class CameraController : MonoBehaviour
             zoomVelocity -= deltaZoomVelocity;
 
         //if we've come this far, we aren't changing zoom amount, so let's smooth the zoomVelocity
-
         zoomVelocity *= zoomSmoothing;
 
     }
