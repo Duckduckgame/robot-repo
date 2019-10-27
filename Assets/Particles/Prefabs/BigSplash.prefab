@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2417678555178341235}
   - component: {fileID: 2541025625882231633}
   - component: {fileID: 2542238260796982297}
+  - component: {fileID: -8488919526583838949}
   m_Layer: 0
   m_Name: BigSplash
   m_TagString: Untagged
@@ -25,9 +26,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2415390886900838265}
-  m_LocalRotation: {x: -0.0000020191073, y: -0.7071068, z: -0.7071068, w: 0.0000020191073}
+  m_LocalRotation: {x: 0.00000013240823, y: -0.7071068, z: -0.7071068, w: -0.00000013240823}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 12, y: 12, z: 12}
   m_Children:
   - {fileID: 2417487828387682509}
   - {fileID: 2417801752774251953}
@@ -4841,6 +4842,19 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!114 &-8488919526583838949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2415390886900838265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e28aee0e97a511147864e778d0739178, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeTo: 10
 --- !u!1 &2415640208543046631
 GameObject:
   m_ObjectHideFlags: 0
@@ -4868,7 +4882,7 @@ Transform:
   m_GameObject: {fileID: 2415640208543046631}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 12, y: 12, z: 12}
   m_Children: []
   m_Father: {fileID: 2417678555178341235}
   m_RootOrder: 0
@@ -9706,7 +9720,7 @@ Transform:
   m_GameObject: {fileID: 2416123394069883849}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 12, y: 12, z: 12}
   m_Children: []
   m_Father: {fileID: 2417678555178341235}
   m_RootOrder: 1
@@ -14535,7 +14549,7 @@ Transform:
   m_GameObject: {fileID: 2416160817468301607}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0.179}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 12, y: 12, z: 12}
   m_Children: []
   m_Father: {fileID: 2417678555178341235}
   m_RootOrder: 2
@@ -19313,7 +19327,7 @@ ParticleSystemRenderer:
   m_EnableGPUInstancing: 1
   m_ApplyActiveColorSpace: 0
   m_AllowRoll: 1
-  m_VertexStreams: 0001030402
+  m_VertexStreams: 0001020304
   m_Mesh: {fileID: 4300002, guid: e6c27adf3e47c024da4e786f5898c785, type: 3}
   m_Mesh1: {fileID: 0}
   m_Mesh2: {fileID: 0}
