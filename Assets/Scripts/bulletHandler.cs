@@ -24,12 +24,14 @@ public class bulletHandler : MonoBehaviour
         transform.localScale = Vector3.Lerp(transform.localScale, Vector3.one * endSize, Time.deltaTime * 5);
     }
 
-    private void OnCollisionEnter(Collision collision)
+    /*private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.GetComponent<BoidBehaviour>() != null)
+        Debug.Log("collision detected " + collision.transform.name);
+        if(collision.gameObject.GetComponent<boidDaddyHandler>() != null)
         {
-            boidController.KillBoidByInstance(collision.gameObject);
+            Debug.Log("boid ball hit");
+            boidController.KillBoidByNumber(Random.Range(0, boidController.boidList.Count - 1));
         }
         Destroy(gameObject,0.01f);
-    }
+    }*/
 }

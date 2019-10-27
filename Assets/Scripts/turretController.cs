@@ -47,7 +47,7 @@ public class turretController : MonoBehaviour
             go.GetComponent<LineRenderer>().enabled = true;
             laserLineRenderer = go.GetComponent<LineRenderer>();
         }
-        GetComponent<SphereCollider>().radius = detectionRange * 2;
+        GetComponent<SphereCollider>().radius = detectionRange / 2;
     }
 
     // Update is called once per frame
