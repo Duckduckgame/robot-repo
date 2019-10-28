@@ -22,6 +22,8 @@ public class BaseHandler : MonoBehaviour
 
     GameObject player;
 
+    public GameObject explosionParticles;
+
     bool shieldDown = false;
     // Start is called before the first frame update
     void Start()

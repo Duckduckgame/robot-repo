@@ -109,7 +109,6 @@ public class BoidController : MonoBehaviour
     // Can be called by the turret or other enemies to kill a specific boid
     public void KillBoidByInstance(GameObject boid)
     {
-        Debug.Log("Killed by instance");
         Instantiate(droneDeathParticle, boid.GetComponent<Transform>().transform.position, Quaternion.identity);
         boidList.Remove(boid);
         Destroy(boid);
@@ -118,7 +117,7 @@ public class BoidController : MonoBehaviour
     // Manual destruction of boids
     public void KillBoidByNumber(int listPosition)
     {
-        Debug.Log("Killed by number");
+
         var boid = boidList[listPosition];
         boidList.RemoveAt(listPosition);
         Instantiate(droneDeathParticle, boid.GetComponent<Transform>().transform.position, Quaternion.identity);

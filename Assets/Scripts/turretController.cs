@@ -43,6 +43,9 @@ public class turretController : MonoBehaviour
 
     SoundManager soundManager;
 
+    [SerializeField]
+    bool showGizmos = false;
+
 
     // explosion effect
     public GameObject explosionParticles;
@@ -151,12 +154,14 @@ public class turretController : MonoBehaviour
 
     private void OnDrawGizmos()
     {
+        if (showGizmos) { 
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, detectionRange);
 
-        if (agro)
-        {
-            Gizmos.DrawLine(transform.position, player.transform.position);
+            if (agro)
+            {
+                Gizmos.DrawLine(transform.position, player.transform.position);
+            }
         }
     }
 }

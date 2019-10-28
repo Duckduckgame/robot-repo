@@ -174,9 +174,10 @@ MonoBehaviour:
   bullet: {fileID: 2690577647986418525, guid: 65e2b553907584b4baec27e455030549, type: 3}
   laser: {fileID: 379731771587039806, guid: 223d98978b4a13742aac29670cb1d826, type: 3}
   fireTimer: 0.5
-  laserTimer: 0.1
+  laserTimer: 0.75
   dead: 0
   belongsToBase: 0
+  showGizmos: 0
   explosionParticles: {fileID: 8350366466507636678, guid: 631955896bf4b3a46a09aa7db74aab57,
     type: 3}
 --- !u!114 &5342786918508714844
@@ -361,11 +362,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.9565
       objectReference: {fileID: 0}
-    - target: {fileID: 856365191234717131, guid: 2c7454dd32465ab4399a67353618eb7b,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 3bce6d986d5351a48b1f0dba9db89a7e, type: 2}
     - target: {fileID: 2636797423722545353, guid: 2c7454dd32465ab4399a67353618eb7b,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -381,6 +377,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 856365191234717131, guid: 2c7454dd32465ab4399a67353618eb7b,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3bce6d986d5351a48b1f0dba9db89a7e, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c7454dd32465ab4399a67353618eb7b, type: 3}
 --- !u!1 &2373375918813481733 stripped
