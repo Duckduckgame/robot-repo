@@ -46,7 +46,7 @@ public class BoidController : MonoBehaviour
     [Range(0.1f, 20.0f)]
     public float rotationCoeff = 4.0f;
 
-    [Range(0.1f, 10.0f)]
+    [Range(0.1f, 20.0f)]
     public float neighborDist = 2.0f;
 
     public LayerMask searchLayer;

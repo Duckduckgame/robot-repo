@@ -8,7 +8,7 @@ public class turretController : MonoBehaviour
     [SerializeField]
     fireMode crntMode;
     [SerializeField]
-    int life;
+    public int life;
     [SerializeField]
     float detectionRange;
     [SerializeField]
