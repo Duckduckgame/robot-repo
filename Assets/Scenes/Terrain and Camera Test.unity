@@ -14,7 +14,7 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
-  m_Fog: 1
+  m_Fog: 0
   m_FogColor: {r: 0.5268779, g: 0.6037736, b: 0.6029967, a: 1}
   m_FogMode: 1
   m_FogDensity: 0.01
@@ -1395,6 +1395,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 977305976}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &181115655 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5320787060344289077, guid: b8ebf63718bd9d9479530b205d604385,
+    type: 3}
+  m_PrefabInstance: {fileID: 425709270}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &182499746 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: a62e00d1fc348b642b3e21c0325ceeff,
@@ -1955,6 +1961,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 395555462}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &359412461 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 703286269033174511, guid: 95095dbc16812984fb4ccc353a1cf3e4,
+    type: 3}
+  m_PrefabInstance: {fileID: 977305976}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &362161324 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 14eefb0945ccf6c41a06a2b5790c7c43,
+    type: 3}
+  m_PrefabInstance: {fileID: 868250055}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &370030643
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2067,7 +2085,7 @@ RectTransform:
   m_GameObject: {fileID: 370849947}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.6466, y: 1.6466, z: 1.6466}
   m_Children:
   - {fileID: 1790750455}
   m_Father: {fileID: 411323085}
@@ -2154,8 +2172,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: ef087bc2dacde9c4f8ebb3723c3b0d8d, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -2524,8 +2542,8 @@ CanvasGroup:
   m_GameObject: {fileID: 411323080}
   m_Enabled: 1
   m_Alpha: 0
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
 --- !u!114 &411323082
 MonoBehaviour:
@@ -3573,10 +3591,12 @@ MonoBehaviour:
   - {fileID: 1229475680}
   - {fileID: 1976647088}
   life: 100
-  Shield: {fileID: 0}
+  Shield: {fileID: 359412461}
   shieldDownclip: {fileID: 8300000, guid: 9c793f21dc838794f82c4e5f43832275, type: 3}
   explosionClip: {fileID: 8300000, guid: 8bc5c8c727fdb0e4fa8f2d6b92316333, type: 3}
-  explosionParticles: {fileID: 0}
+  explosionParticles: {fileID: 8350366466507636678, guid: 631955896bf4b3a46a09aa7db74aab57,
+    type: 3}
+  boomPos: {fileID: 362161324}
 --- !u!114 &519502230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3699,6 +3719,12 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 229.14691, y: 289.26764, z: 232.70679}
   m_Center: {x: 169.88263, y: -88.350586, z: 1061.306}
+--- !u!1 &521489273 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3450560847447084832, guid: 7f4f87d27f7949545af758aaf886a174,
+    type: 3}
+  m_PrefabInstance: {fileID: 1039819773}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &529627936
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4502,6 +4528,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c03d49ff0c7ef1d468eef96757cf684e, type: 3}
+--- !u!1 &607747871 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 874f46504b813154f82d1ecf16068616,
+    type: 3}
+  m_PrefabInstance: {fileID: 1901155832}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &614679229
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5509,6 +5541,7 @@ MonoBehaviour:
   explosionClip: {fileID: 8300000, guid: 8bc5c8c727fdb0e4fa8f2d6b92316333, type: 3}
   explosionParticles: {fileID: 8350366466507636678, guid: 631955896bf4b3a46a09aa7db74aab57,
     type: 3}
+  boomPos: {fileID: 181115655}
 --- !u!114 &812038453
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8012,7 +8045,9 @@ MonoBehaviour:
   Shield: {fileID: 867430946}
   shieldDownclip: {fileID: 8300000, guid: 9c793f21dc838794f82c4e5f43832275, type: 3}
   explosionClip: {fileID: 8300000, guid: 8bc5c8c727fdb0e4fa8f2d6b92316333, type: 3}
-  explosionParticles: {fileID: 0}
+  explosionParticles: {fileID: 8350366466507636678, guid: 631955896bf4b3a46a09aa7db74aab57,
+    type: 3}
+  boomPos: {fileID: 867430946}
 --- !u!114 &1156059702
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9395,7 +9430,7 @@ RectTransform:
   m_GameObject: {fileID: 1323574575}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.6466, y: 1.6466, z: 1.6466}
   m_Children:
   - {fileID: 1650114707}
   m_Father: {fileID: 411323085}
@@ -9403,7 +9438,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 10}
+  m_AnchoredPosition: {x: 0, y: -93}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1323574577
@@ -9482,8 +9517,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: ef087bc2dacde9c4f8ebb3723c3b0d8d, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -10830,6 +10865,7 @@ MonoBehaviour:
   explosionClip: {fileID: 8300000, guid: 8bc5c8c727fdb0e4fa8f2d6b92316333, type: 3}
   explosionParticles: {fileID: 8350366466507636678, guid: 631955896bf4b3a46a09aa7db74aab57,
     type: 3}
+  boomPos: {fileID: 607747871}
 --- !u!114 &1595530776
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11361,8 +11397,9 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 45980b67e37496942955c3806c3debea, type: 2}
+  m_sharedMaterial: {fileID: -7461957246890946566, guid: 45980b67e37496942955c3806c3debea,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -11995,8 +12032,9 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: Resume
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 45980b67e37496942955c3806c3debea, type: 2}
+  m_sharedMaterial: {fileID: -7461957246890946566, guid: 45980b67e37496942955c3806c3debea,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -13718,7 +13756,9 @@ MonoBehaviour:
   Shield: {fileID: 563015368}
   shieldDownclip: {fileID: 8300000, guid: 9c793f21dc838794f82c4e5f43832275, type: 3}
   explosionClip: {fileID: 8300000, guid: 8bc5c8c727fdb0e4fa8f2d6b92316333, type: 3}
-  explosionParticles: {fileID: 0}
+  explosionParticles: {fileID: 8350366466507636678, guid: 631955896bf4b3a46a09aa7db74aab57,
+    type: 3}
+  boomPos: {fileID: 521489273}
 --- !u!114 &2011259142
 MonoBehaviour:
   m_ObjectHideFlags: 0

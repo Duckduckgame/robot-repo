@@ -43,7 +43,7 @@ public class UIPauseHandler : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape) && crntMode == UIMode.play)
         {
             crntMode = UIMode.pause;
-            Time.timeScale = 0.1f;
+            Time.timeScale = 0f;
         }
 
 

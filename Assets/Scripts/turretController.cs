@@ -128,7 +128,6 @@ public class turretController : MonoBehaviour
         boidController.RunTimeSpawn(player.transform.position, 30);
 
         Instantiate(explosionParticles, transform.position, Quaternion.identity);
-        Destroy(gameObject);
 
         Destroy(gameObject, 0.5f);
         Destroy(this);

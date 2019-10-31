@@ -23,6 +23,8 @@ public class BaseHandler : MonoBehaviour
     GameObject player;
 
     public GameObject explosionParticles;
+    [SerializeField]
+    GameObject boomPos;
 
     bool shieldDown = false;
     // Start is called before the first frame update
@@ -70,7 +72,10 @@ public class BaseHandler : MonoBehaviour
         FindObjectOfType<WinLose>().buildingCount--;
         soundManager.PlayByClip(explosionClip);
         boidController.RunTimeSpawn(player.transform.position, 30);
-        Destroy(gameObject, 2f);
+
+        Instantiate(explosionParticles, boomPos.transform.position, Quaternion.identity);
+
+        Destroy(gameObject, 0.5f);
         Destroy(this);
     }
 
