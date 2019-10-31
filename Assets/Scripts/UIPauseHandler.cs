@@ -60,7 +60,11 @@ public class UIPauseHandler : MonoBehaviour
     void SwitchModes()
     {
         modeToCanvas[oldMode].alpha = 0;
+        modeToCanvas[oldMode].blocksRaycasts = false;
+        modeToCanvas[oldMode].interactable = false;
         modeToCanvas[crntMode].alpha = 1;
+        modeToCanvas[crntMode].blocksRaycasts = true;
+        modeToCanvas[crntMode].interactable = true;
         oldMode = crntMode;
     }
 
