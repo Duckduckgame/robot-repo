@@ -7,7 +7,7 @@ public class HealthBarUIHandler : MonoBehaviour
 {
     public Slider slider;
     public turretController turret;
-
+    public BaseHandler baseHand;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,7 +28,16 @@ public class HealthBarUIHandler : MonoBehaviour
         }
         else
         {
-            Debug.Log("There is no or could not find the turret controler for the Health bar UI script");
+            if(baseHand = GetComponentInParent<BaseHandler>())
+            {
+                baseHand = GetComponentInParent<BaseHandler>();
+                if (slider) slider.maxValue = baseHand.life;
+            }
+            else
+            {
+                Debug.Log("There is no or could not find the turret controler for the Health bar UI script");
+            }
+            
         }
         
     }
@@ -39,6 +48,11 @@ public class HealthBarUIHandler : MonoBehaviour
         if (slider && turret)
         {
             slider.value = turret.life;
+        }
+
+        if(slider && baseHand)
+        {
+            slider.value = baseHand.life;
         }
     }
 }

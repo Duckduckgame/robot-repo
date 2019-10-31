@@ -8,7 +8,7 @@ public class BaseHandler : MonoBehaviour
     [SerializeField]
     List<GameObject> turrets;
     [SerializeField]
-    float life = 100;
+    public float life = 100;
     [SerializeField]
     GameObject Shield;
 
