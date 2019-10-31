@@ -23,7 +23,16 @@ public class boidDaddyHandler : MonoBehaviour
 
     }
 
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.GetComponent<bulletHandler>() != null)
+        {
+
+            boidController.KillBoidByNumber(Random.Range(0, boidController.boidList.Count - 1));
+        }
+    }
+
+   /* private void ontr (Collider other)
     {
         
         if(other.GetComponent<bulletHandler>() != null)
@@ -31,5 +40,5 @@ public class boidDaddyHandler : MonoBehaviour
 
             boidController.KillBoidByNumber(Random.Range(0, boidController.boidList.Count - 1));
         }
-    }
+    }*/
 }
