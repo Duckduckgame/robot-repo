@@ -73,22 +73,28 @@ public class BoidController : MonoBehaviour
 
     public void RunTimeSpawn(Vector3 position)
     {
-        var rotation = Quaternion.Slerp(transform.rotation, Random.rotation, 0.3f);
-        var boid = Instantiate(boidPrefab, position, rotation) as GameObject;
-        if (boid.GetComponent<BoidBehaviour>())
-            boid.GetComponent<BoidBehaviour>().controller = this;
-        boidList.Add(boid);
-    }
-
-    public void RunTimeSpawn(Vector3 position, int amount)
-    {
-        for (int i = 0; i < amount; i++)
+        if (boidList.Count < 800)
         {
             var rotation = Quaternion.Slerp(transform.rotation, Random.rotation, 0.3f);
             var boid = Instantiate(boidPrefab, position, rotation) as GameObject;
             if (boid.GetComponent<BoidBehaviour>())
                 boid.GetComponent<BoidBehaviour>().controller = this;
             boidList.Add(boid);
+        }
+    }
+
+    public void RunTimeSpawn(Vector3 position, int amount)
+    {
+        if (boidList.Count < 800)
+        {
+            for (int i = 0; i < amount; i++)
+            {
+                var rotation = Quaternion.Slerp(transform.rotation, Random.rotation, 0.3f);
+                var boid = Instantiate(boidPrefab, position, rotation) as GameObject;
+                if (boid.GetComponent<BoidBehaviour>())
+                    boid.GetComponent<BoidBehaviour>().controller = this;
+                boidList.Add(boid);
+            }
         }
     }
 

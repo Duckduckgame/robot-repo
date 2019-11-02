@@ -125,8 +125,10 @@ public class turretController : MonoBehaviour
     public void Die()
     {
         soundManager.PlayByID(2);
-        boidController.RunTimeSpawn(player.transform.position, 30);
-
+        if (boidController.boidList.Count < 800)
+        {
+            boidController.RunTimeSpawn(player.transform.position, 30);
+        }
         Instantiate(explosionParticles, transform.position, Quaternion.identity);
 
         Destroy(gameObject, 0.5f);

@@ -2123,8 +2123,8 @@ MonoBehaviour:
   scrollspeed: 1000
   WASDspeed: 7500
   yMin: 85
-  yMax: 1000
-  zoomSmoothing: 0.8
+  yMax: 750
+  zoomSmoothing: 0.5
 --- !u!114 &155537954
 MonoBehaviour:
   m_ObjectHideFlags: 0

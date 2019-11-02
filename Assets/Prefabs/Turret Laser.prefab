@@ -305,6 +305,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slider: {fileID: 0}
   turret: {fileID: 0}
+  baseHand: {fileID: 0}
 --- !u!1 &2144787841
 GameObject:
   m_ObjectHideFlags: 0
@@ -578,7 +579,7 @@ MonoBehaviour:
   bullet: {fileID: 2690577647986418525, guid: 65e2b553907584b4baec27e455030549, type: 3}
   laser: {fileID: 379731771587039806, guid: 223d98978b4a13742aac29670cb1d826, type: 3}
   fireTimer: 0.5
-  laserTimer: 0.75
+  laserTimer: 0.5
   dead: 0
   belongsToBase: 0
   showGizmos: 0
@@ -689,7 +690,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: 2c7454dd32465ab4399a67353618eb7b,
         type: 3}
       propertyPath: m_Name
-      value: Turret Laser (8)
+      value: Turret Laser
       objectReference: {fileID: 0}
     - target: {fileID: -8052994932809076077, guid: 2c7454dd32465ab4399a67353618eb7b,
         type: 3}
